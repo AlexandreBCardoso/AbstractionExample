@@ -1,0 +1,2 @@
+# AbstractionExample
+Projeto de abstração
