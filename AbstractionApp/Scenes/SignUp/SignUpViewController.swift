@@ -1,5 +1,5 @@
 //
-//  SignInViewController.swift
+//  SignUpViewController.swift
 //  AbstractionApp
 //
 //  Created by Alexandre Cardoso on 22/06/23.
@@ -7,13 +7,13 @@
 
 import UIKit
 
-final class SignInViewController: UIViewController {
+final class SignUpViewController: UIViewController {
     
-    private var viewModel = SignInViewModel()
+    private var viewModel = SignUpViewModel()
     
     init() {
         super.init(nibName: nil, bundle: nil)
-        self.title = "Entrar"
+        self.title = "Registrar"
         self.viewModel.delegate = self
     }
     
@@ -23,34 +23,34 @@ final class SignInViewController: UIViewController {
     }
     
     override func loadView() {
-        let customView = SignInView()
+        let customView = SignUpView()
         customView.delegate = self
         view = customView
     }
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
 }
 
-// MARK: - SignInViewDelegate
-extension SignInViewController: SignInViewDelegate {
+// MARK: - SignUpViewDelegate
+extension SignUpViewController: SignUpViewDelegate {
     
-    func didSignInButton(email: String?, password: String?) {
-        viewModel.signIn(email: email, password: password)
+    func didSignUpButton(email: String?, password: String?, confirmPassword: String?) {
+        viewModel.signUp(email: email, password: password, confirmPassword: confirmPassword)
     }
     
-    func didSignUpButton() {
-        let viewController = SignUpViewController()
+    func didSignInButton() {
+        let viewController = SignInViewController()
         navigationController?.setViewControllers([viewController], animated: true)
     }
-    
+        
 }
 
-// MARK: - SignInViewModelDelegate
-extension SignInViewController: SignInViewModelDelegate {
-    
+// MARK: - SignUpViewModelDelegate
+extension SignUpViewController: SignUpViewModelDelegate {
+
     func showError(_ message: String) {
         let alertController = UIAlertController(title: "Erro", message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .cancel)
@@ -58,10 +58,13 @@ extension SignInViewController: SignInViewModelDelegate {
         navigationController?.present(alertController, animated: true)
     }
     
-    func signInSuccess() {
-        let alertController = UIAlertController(title: "Sucesso", message: "Usuário logado!", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .cancel)
+    func signUpSuccess() {
+        let alertController = UIAlertController(title: "Sucesso", message: "Usuário criado!", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .cancel) { action in
+            self.didSignInButton()
+        }
         alertController.addAction(okAction)
         navigationController?.present(alertController, animated: true)
     }
+    
 }
