@@ -5,7 +5,6 @@
 //  Created by Alexandre Cardoso on 22/06/23.
 //
 
-import FirebaseAuth
 import UIKit
 
 protocol SignInViewModelDelegate: AnyObject {
@@ -17,21 +16,24 @@ struct SignInViewModel {
     
     internal weak var delegate: SignInViewModelDelegate?
     
+    private let firebaseService = FirebaseAuthService()
+    
     func signIn(email: String?, password: String?) {
         guard let email, let password else {
             delegate?.showError("Preenchimento incorreto")
             return
         }
         
-        Auth.auth().signIn(withEmail: email, password: password) { authDataResult, error in
-            if let error {
-                delegate?.showError(error.localizedDescription)
-                return
-            }
-            
-            if let _ = authDataResult {
-                delegate?.signInSuccess()
+        firebaseService.signIn(email: email, password: password) { result in
+            switch result {
+                case let .success(response):
+                    print("User UID: \(response.user.uid)")
+                    delegate?.signInSuccess()
+                case let .failure(response):
+                    delegate?.showError(response.localizedDescription)
             }
         }
+        
     }
+    
 }

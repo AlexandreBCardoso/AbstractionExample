@@ -5,7 +5,6 @@
 //  Created by Alexandre Cardoso on 22/06/23.
 //
 
-import FirebaseAuth
 import UIKit
 
 protocol SignUpViewModelDelegate: AnyObject {
@@ -17,6 +16,8 @@ struct SignUpViewModel {
     
     internal weak var delegate: SignUpViewModelDelegate?
     
+    private let firebaseService = FirebaseAuthService()
+    
     func signUp(email: String?, password: String?, confirmPassword: String?) {
         guard let email,
               let password,
@@ -27,14 +28,13 @@ struct SignUpViewModel {
             return
         }
         
-        Auth.auth().createUser(withEmail: email, password: password) { authDataResult, error in
-            if let error {
-                delegate?.showError(error.localizedDescription)
-                return
-            }
-            
-            if let _ = authDataResult {
-                delegate?.signUpSuccess()
+        firebaseService.signUp(email: email, password: password) { result in
+            switch result {
+                case let .success(response):
+                    print("User UID: \(response.user.uid)")
+                    delegate?.signUpSuccess()
+                case let .failure(response):
+                    delegate?.showError(response.localizedDescription)
             }
         }
     }

@@ -97,6 +97,9 @@ extension SignInView: ViewCoding {
     func render() {
         backgroundColor = .white
         
+        emailTextField.text = "teste@teste.com"
+        passwordTextField.text = "123456"
+        
         emailTextField.placeholder = "Endereço de email para logar"
         emailTextField.textColor = .black
         emailTextField.layer.borderWidth = 1

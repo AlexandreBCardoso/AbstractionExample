@@ -20,6 +20,7 @@
 		BC5407792A4513D6001EF32B /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5407782A4513D6001EF32B /* SignUpView.swift */; };
 		BC54077B2A4514EC001EF32B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC54077A2A4514EC001EF32B /* SignUpViewController.swift */; };
 		BC54077D2A451C1C001EF32B /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC54077C2A451C1C001EF32B /* SignUpViewModel.swift */; };
+		BC6B46F32A4D1BBE0017DF8C /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6B46F22A4D1BBE0017DF8C /* FirebaseAuthService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		BC5407782A4513D6001EF32B /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		BC54077A2A4514EC001EF32B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		BC54077C2A451C1C001EF32B /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		BC6B46F22A4D1BBE0017DF8C /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		BC420C3D2A436153009D6E67 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				BC6B46F12A4D1BA20017DF8C /* Service */,
 				BC5407702A4510F7001EF32B /* SignIn */,
 				BC5407772A4513BE001EF32B /* SignUp */,
 			);
@@ -133,6 +136,14 @@
 				BC54077C2A451C1C001EF32B /* SignUpViewModel.swift */,
 			);
 			path = SignUp;
+			sourceTree = "<group>";
+		};
+		BC6B46F12A4D1BA20017DF8C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				BC6B46F22A4D1BBE0017DF8C /* FirebaseAuthService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC6B46F32A4D1BBE0017DF8C /* FirebaseAuthService.swift in Sources */,
 				BC420C282A435F09009D6E67 /* AppDelegate.swift in Sources */,
 				BC420C2A2A435F09009D6E67 /* SceneDelegate.swift in Sources */,
 				BC54077B2A4514EC001EF32B /* SignUpViewController.swift in Sources */,
