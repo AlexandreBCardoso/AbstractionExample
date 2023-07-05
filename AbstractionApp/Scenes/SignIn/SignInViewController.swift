@@ -9,9 +9,10 @@ import UIKit
 
 final class SignInViewController: UIViewController {
     
-    private var viewModel = SignInViewModel()
+    private var viewModel: SignInViewModel
     
-    init() {
+    init(viewModel: SignInViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         self.title = "Entrar"
         self.viewModel.delegate = self

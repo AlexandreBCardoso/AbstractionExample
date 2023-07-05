@@ -16,7 +16,11 @@ struct SignUpViewModel {
     
     internal weak var delegate: SignUpViewModelDelegate?
     
-    private let firebaseService = FirebaseAuthService()
+    private let firebaseService: FirebaseAuthProtocol
+    
+    init(firebaseService: FirebaseAuthProtocol) {
+        self.firebaseService = firebaseService
+    }
     
     func signUp(email: String?, password: String?, confirmPassword: String?) {
         guard let email,

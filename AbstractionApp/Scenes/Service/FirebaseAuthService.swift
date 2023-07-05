@@ -7,7 +7,12 @@
 
 import FirebaseAuth
 
-final class FirebaseAuthService {
+protocol FirebaseAuthProtocol {
+    func signIn(email: String, password: String, completion: @escaping (Result<AuthDataResult, Error>) -> Void)
+    func signUp(email: String, password: String, completion: @escaping(Result<AuthDataResult, Error>) -> Void)
+}
+
+final class FirebaseAuthService: FirebaseAuthProtocol {
     
     func signIn(email: String, password: String, completion: @escaping (Result<AuthDataResult, Error>) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { authDataResult, error in
@@ -36,4 +41,20 @@ final class FirebaseAuthService {
             }
         }
     }
+}
+
+class FirebaseSpy: FirebaseAuthProtocol {
+    private(set) var isSignInCalled = false
+    private(set) var isSignUpCalled = false
+    
+    func signIn(email: String, password: String, completion: @escaping (Result<AuthDataResult, Error>) -> Void) {
+        isSignInCalled = true
+        print("FirebaseMock - signIn")
+    }
+    
+    func signUp(email: String, password: String, completion: @escaping (Result<AuthDataResult, Error>) -> Void) {
+        isSignUpCalled = true
+        print("FirebaseMock - signUp")
+    }
+    
 }

@@ -9,7 +9,7 @@ import UIKit
 
 final class SignUpViewController: UIViewController {
     
-    private var viewModel = SignUpViewModel()
+    private var viewModel = SignUpViewModel(firebaseService: FirebaseAuthService())
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -42,7 +42,8 @@ extension SignUpViewController: SignUpViewDelegate {
     }
     
     func didSignInButton() {
-        let viewController = SignInViewController()
+        let viewModel = SignInViewModel(firebaseService: FirebaseAuthService())
+        let viewController = SignInViewController(viewModel: viewModel)
         navigationController?.setViewControllers([viewController], animated: true)
     }
         
