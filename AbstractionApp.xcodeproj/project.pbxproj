@@ -21,6 +21,7 @@
 		BC54077B2A4514EC001EF32B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC54077A2A4514EC001EF32B /* SignUpViewController.swift */; };
 		BC54077D2A451C1C001EF32B /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC54077C2A451C1C001EF32B /* SignUpViewModel.swift */; };
 		BC6B46F32A4D1BBE0017DF8C /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6B46F22A4D1BBE0017DF8C /* FirebaseAuthService.swift */; };
+		BCFDD09D2A54FDA500B9097F /* FirebaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFDD09C2A54FDA500B9097F /* FirebaseMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		BC54077A2A4514EC001EF32B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		BC54077C2A451C1C001EF32B /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		BC6B46F22A4D1BBE0017DF8C /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
+		BCFDD09C2A54FDA500B9097F /* FirebaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				BC6B46F22A4D1BBE0017DF8C /* FirebaseAuthService.swift */,
+				BCFDD09C2A54FDA500B9097F /* FirebaseMock.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				BC5407722A451109001EF32B /* SignInView.swift in Sources */,
 				BC5407742A4511AB001EF32B /* SignInViewController.swift in Sources */,
 				BC420C462A4364AF009D6E67 /* ViewCoding.swift in Sources */,
+				BCFDD09D2A54FDA500B9097F /* FirebaseMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

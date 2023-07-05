@@ -42,19 +42,3 @@ final class FirebaseAuthService: FirebaseAuthProtocol {
         }
     }
 }
-
-class FirebaseSpy: FirebaseAuthProtocol {
-    private(set) var isSignInCalled = false
-    private(set) var isSignUpCalled = false
-    
-    func signIn(email: String, password: String, completion: @escaping (Result<AuthDataResult, Error>) -> Void) {
-        isSignInCalled = true
-        print("FirebaseMock - signIn")
-    }
-    
-    func signUp(email: String, password: String, completion: @escaping (Result<AuthDataResult, Error>) -> Void) {
-        isSignUpCalled = true
-        print("FirebaseMock - signUp")
-    }
-    
-}
