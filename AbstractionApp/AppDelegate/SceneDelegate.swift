@@ -13,10 +13,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        
-        let viewModel = SignInViewModel(firebaseService: FirebaseMock())
-        let viewController = SignInViewController(viewModel: viewModel)
+        let viewController = SignInFactory.make()
         let navigationController = UINavigationController(rootViewController: viewController)
+
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()

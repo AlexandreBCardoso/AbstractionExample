@@ -16,10 +16,10 @@ struct SignInViewModel {
     
     internal weak var delegate: SignInViewModelDelegate?
     
-    private let firebaseService: FirebaseAuthProtocol
+    private let loginAuth: LoginAuthProtocol
     
-    init(firebaseService: FirebaseAuthProtocol) {
-        self.firebaseService = firebaseService
+    init(loginAuth: LoginAuthProtocol) {
+        self.loginAuth = loginAuth
     }
     
     func signIn(email: String?, password: String?) {
@@ -28,10 +28,12 @@ struct SignInViewModel {
             return
         }
         
-        firebaseService.signIn(email: email, password: password) { result in
+        loginAuth.signIn(email: email, password: password) { result in
             switch result {
                 case let .success(response):
-                    print("User UID: \(response.user.uid)")
+                    print("User UID: \(response.uid)")
+                    print("User displayName: \(String(describing: response.displayName))")
+                    print("User email: \(String(describing: response.email))")
                     delegate?.signInSuccess()
                 case let .failure(response):
                     delegate?.showError(response.localizedDescription)

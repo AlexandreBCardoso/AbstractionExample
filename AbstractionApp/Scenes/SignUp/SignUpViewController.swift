@@ -42,7 +42,7 @@ extension SignUpViewController: SignUpViewDelegate {
     }
     
     func didSignInButton() {
-        let viewModel = SignInViewModel(firebaseService: FirebaseAuthService())
+        let viewModel = SignInViewModel(loginAuth: LoginFirebaseService())
         let viewController = SignInViewController(viewModel: viewModel)
         navigationController?.setViewControllers([viewController], animated: true)
     }

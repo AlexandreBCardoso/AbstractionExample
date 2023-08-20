@@ -21,6 +21,13 @@
 		BC54077B2A4514EC001EF32B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC54077A2A4514EC001EF32B /* SignUpViewController.swift */; };
 		BC54077D2A451C1C001EF32B /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC54077C2A451C1C001EF32B /* SignUpViewModel.swift */; };
 		BC6B46F32A4D1BBE0017DF8C /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6B46F22A4D1BBE0017DF8C /* FirebaseAuthService.swift */; };
+		BCA279362A925AB100A3E40A /* LoginAuthProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA279352A925AB000A3E40A /* LoginAuthProtocol.swift */; };
+		BCA279392A925F0600A3E40A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA279382A925F0600A3E40A /* User.swift */; };
+		BCA2793B2A92628600A3E40A /* LoginFirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA2793A2A92628600A3E40A /* LoginFirebaseService.swift */; };
+		BCA2793F2A9267F700A3E40A /* FirebaseAuthProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA2793E2A9267F700A3E40A /* FirebaseAuthProtocol.swift */; };
+		BCA279422A92685100A3E40A /* LoginFacebookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA279412A92685100A3E40A /* LoginFacebookService.swift */; };
+		BCA279452A92691B00A3E40A /* LoginGoogleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA279442A92691B00A3E40A /* LoginGoogleService.swift */; };
+		BCA279472A92695400A3E40A /* SignInFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA279462A92695400A3E40A /* SignInFactory.swift */; };
 		BCFDD09D2A54FDA500B9097F /* FirebaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFDD09C2A54FDA500B9097F /* FirebaseMock.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +47,13 @@
 		BC54077A2A4514EC001EF32B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		BC54077C2A451C1C001EF32B /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		BC6B46F22A4D1BBE0017DF8C /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
+		BCA279352A925AB000A3E40A /* LoginAuthProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAuthProtocol.swift; sourceTree = "<group>"; };
+		BCA279382A925F0600A3E40A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BCA2793A2A92628600A3E40A /* LoginFirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFirebaseService.swift; sourceTree = "<group>"; };
+		BCA2793E2A9267F700A3E40A /* FirebaseAuthProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthProtocol.swift; sourceTree = "<group>"; };
+		BCA279412A92685100A3E40A /* LoginFacebookService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFacebookService.swift; sourceTree = "<group>"; };
+		BCA279442A92691B00A3E40A /* LoginGoogleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginGoogleService.swift; sourceTree = "<group>"; };
+		BCA279462A92695400A3E40A /* SignInFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInFactory.swift; sourceTree = "<group>"; };
 		BCFDD09C2A54FDA500B9097F /* FirebaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +119,7 @@
 		BC420C3D2A436153009D6E67 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				BCA279372A925EEB00A3E40A /* Model */,
 				BC6B46F12A4D1BA20017DF8C /* Service */,
 				BC5407702A4510F7001EF32B /* SignIn */,
 				BC5407772A4513BE001EF32B /* SignUp */,
@@ -123,6 +138,7 @@
 		BC5407702A4510F7001EF32B /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
+				BCA279462A92695400A3E40A /* SignInFactory.swift */,
 				BC5407712A451109001EF32B /* SignInView.swift */,
 				BC5407732A4511AB001EF32B /* SignInViewController.swift */,
 				BC5407752A4511E5001EF32B /* SignInViewModel.swift */,
@@ -143,10 +159,55 @@
 		BC6B46F12A4D1BA20017DF8C /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				BC6B46F22A4D1BBE0017DF8C /* FirebaseAuthService.swift */,
-				BCFDD09C2A54FDA500B9097F /* FirebaseMock.swift */,
+				BCA2793C2A92630F00A3E40A /* Protocol */,
+				BCA279402A92682D00A3E40A /* Facebook */,
+				BCA279342A925A9600A3E40A /* Firebase */,
+				BCA279432A92690900A3E40A /* Google */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		BCA279342A925A9600A3E40A /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				BC6B46F22A4D1BBE0017DF8C /* FirebaseAuthService.swift */,
+				BCA2793A2A92628600A3E40A /* LoginFirebaseService.swift */,
+				BCFDD09C2A54FDA500B9097F /* FirebaseMock.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		BCA279372A925EEB00A3E40A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BCA279382A925F0600A3E40A /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BCA2793C2A92630F00A3E40A /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				BCA279352A925AB000A3E40A /* LoginAuthProtocol.swift */,
+				BCA2793E2A9267F700A3E40A /* FirebaseAuthProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		BCA279402A92682D00A3E40A /* Facebook */ = {
+			isa = PBXGroup;
+			children = (
+				BCA279412A92685100A3E40A /* LoginFacebookService.swift */,
+			);
+			path = Facebook;
+			sourceTree = "<group>";
+		};
+		BCA279432A92690900A3E40A /* Google */ = {
+			isa = PBXGroup;
+			children = (
+				BCA279442A92691B00A3E40A /* LoginGoogleService.swift */,
+			);
+			path = Google;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCA279392A925F0600A3E40A /* User.swift in Sources */,
 				BC6B46F32A4D1BBE0017DF8C /* FirebaseAuthService.swift in Sources */,
 				BC420C282A435F09009D6E67 /* AppDelegate.swift in Sources */,
 				BC420C2A2A435F09009D6E67 /* SceneDelegate.swift in Sources */,
@@ -234,8 +296,14 @@
 				BC54077D2A451C1C001EF32B /* SignUpViewModel.swift in Sources */,
 				BC5407792A4513D6001EF32B /* SignUpView.swift in Sources */,
 				BC5407722A451109001EF32B /* SignInView.swift in Sources */,
+				BCA279422A92685100A3E40A /* LoginFacebookService.swift in Sources */,
 				BC5407742A4511AB001EF32B /* SignInViewController.swift in Sources */,
+				BCA2793F2A9267F700A3E40A /* FirebaseAuthProtocol.swift in Sources */,
+				BCA279362A925AB100A3E40A /* LoginAuthProtocol.swift in Sources */,
 				BC420C462A4364AF009D6E67 /* ViewCoding.swift in Sources */,
+				BCA2793B2A92628600A3E40A /* LoginFirebaseService.swift in Sources */,
+				BCA279452A92691B00A3E40A /* LoginGoogleService.swift in Sources */,
+				BCA279472A92695400A3E40A /* SignInFactory.swift in Sources */,
 				BCFDD09D2A54FDA500B9097F /* FirebaseMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
