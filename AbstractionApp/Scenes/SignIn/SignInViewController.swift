@@ -43,7 +43,7 @@ extension SignInViewController: SignInViewDelegate {
     }
     
     func didSignUpButton() {
-        let viewController = SignUpViewController()
+        let viewController = SignUpFactory.make()
         navigationController?.setViewControllers([viewController], animated: true)
     }
     

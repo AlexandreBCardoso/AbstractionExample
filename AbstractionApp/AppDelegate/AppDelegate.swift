@@ -5,7 +5,7 @@
 //  Created by Alexandre Cardoso on 21/06/23.
 //
 
-import FirebaseCore
+import LoginAuth
 import UIKit
 
 @main
@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
-        FirebaseApp.configure()
+        LoginFirebaseApp.configure()
         return true
     }
 

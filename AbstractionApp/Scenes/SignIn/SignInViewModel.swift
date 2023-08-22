@@ -5,6 +5,7 @@
 //  Created by Alexandre Cardoso on 22/06/23.
 //
 
+import LoginAuth
 import UIKit
 
 protocol SignInViewModelDelegate: AnyObject {

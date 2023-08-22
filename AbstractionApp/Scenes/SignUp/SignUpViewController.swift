@@ -5,11 +5,12 @@
 //  Created by Alexandre Cardoso on 22/06/23.
 //
 
+import LoginAuth
 import UIKit
 
 final class SignUpViewController: UIViewController {
     
-    private var viewModel = SignUpViewModel(firebaseService: FirebaseAuthService())
+    private var viewModel = SignUpViewModel(loginAuth: LoginFirebaseService())
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -42,7 +43,7 @@ extension SignUpViewController: SignUpViewDelegate {
     }
     
     func didSignInButton() {
-        let viewModel = SignInViewModel(loginAuth: LoginFirebaseService())
+        let viewModel = SignInViewModel(loginAuth: LoginFacebookService())
         let viewController = SignInViewController(viewModel: viewModel)
         navigationController?.setViewControllers([viewController], animated: true)
     }
